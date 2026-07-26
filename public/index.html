@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Love Match ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+    <h1>❤️ LOVE MATCH</h1>
+
+    <p>
+        Joc de compatibilitate pentru două persoane
+    </p>
+
+
+
+    <input 
+        id="name"
+        placeholder="Numele tău"
+    >
+
+
+
+    <div class="gender">
+
+
+        <button onclick="selectGender('boy')" id="boyBtn">
+            👦 Băiat
+        </button>
+
+
+        <button onclick="selectGender('girl')" id="girlBtn">
+            👧 Fată
+        </button>
+
+
+    </div>
+
+
+
+    <button class="join" onclick="joinGame()">
+
+        Intră în joc ❤️
+
+    </button>
+
+
+
+    <p id="status"></p>
+
+
+</div>
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="app.js"></script>
+
+
+</body>
+
+</html>

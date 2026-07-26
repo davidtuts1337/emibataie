@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Love Match ❤️</title>
+
+<link rel="stylesheet" href="game.css">
+
+</head>
+
+
+<body>
+
+
+<div class="game">
+
+
+    <div class="header">
+
+        <h1>❤️ LOVE MATCH</h1>
+        <div class="timer">
+
+            <svg>
+                <circle 
+                class="bg"
+                cx="45"
+                cy="45"
+                r="40">
+                </circle>
+
+
+                <circle 
+                class="progressCircle"
+                cx="45"
+                cy="45"
+                r="40">
+                </circle>
+
+            </svg>
+
+
+            <span id="timer">
+                20
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="progress">
+
+        <div id="bar"></div>
+
+    </div>
+
+
+
+    <div class="questionBox">
+
+
+        <h2 id="question">
+            Se încarcă...
+        </h2>
+
+
+    </div>
+
+
+
+    <div class="answers">
+
+
+        <button class="answer" data-id="0">
+            A
+        </button>
+
+
+        <button class="answer" data-id="1">
+            B
+        </button>
+
+
+        <button class="answer" data-id="2">
+            C
+        </button>
+
+
+        <button class="answer" data-id="3">
+            D
+        </button>
+
+
+    </div>
+
+
+    <h3 id="status"></h3>
+
+
+</div>
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="/game.js"></script>
+
+
+</body>
+
+</html>

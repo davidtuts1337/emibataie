@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Admin Love Match</title>
+
+<link rel="stylesheet" href="admin.css">
+
+</head>
+
+
+<body>
+
+
+<div id="login" class="panel">
+
+
+<h1>❤️ ADMIN LOGIN</h1>
+
+
+<input 
+id="password"
+type="password"
+placeholder="Parola admin"
+>
+
+
+<button onclick="login()">
+Intră
+</button>
+
+
+<p id="error"></p>
+
+
+</div>
+
+
+
+
+
+<div id="adminPanel" class="panel" style="display:none;">
+
+
+<h1>❤️ LOVE MATCH ADMIN</h1>
+
+
+<button id="start">
+🚀 START JOC
+</button>
+
+
+<button id="reset">
+🔄 RESET JOC
+</button>
+
+
+
+<div class="columns">
+
+
+<div class="box boy">
+
+<h2>👦 Întrebări băiat</h2>
+
+
+<input id="boyQuestion" placeholder="Întrebarea">
+
+<input id="boyA" placeholder="Răspuns A">
+<input id="boyB" placeholder="Răspuns B">
+<input id="boyC" placeholder="Răspuns C">
+<input id="boyD" placeholder="Răspuns D">
+
+<input id="boyCorrect" type="number" placeholder="Corect 0-3">
+
+
+<button onclick="addQuestion('boy')">
+➕ Adaugă
+</button>
+
+
+<div id="boyList"></div>
+
+
+</div>
+
+
+
+<div class="box girl">
+
+
+<h2>👧 Întrebări fată</h2>
+
+
+<input id="girlQuestion" placeholder="Întrebarea">
+
+<input id="girlA" placeholder="Răspuns A">
+<input id="girlB" placeholder="Răspuns B">
+<input id="girlC" placeholder="Răspuns C">
+<input id="girlD" placeholder="Răspuns D">
+
+<input id="girlCorrect" type="number" placeholder="Corect 0-3">
+
+
+<button onclick="addQuestion('girl')">
+➕ Adaugă
+</button>
+
+
+<div id="girlList"></div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="admin.js"></script>
+
+
+</body>
+
+</html>

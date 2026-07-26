@@ -1,0 +1,173 @@
+*{
+
+    box-sizing:border-box;
+    font-family:Poppins,Arial;
+
+}
+
+
+body{
+
+    margin:0;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff75a8,
+        #70c8ff
+    );
+
+}
+
+
+
+.card{
+
+    width:400px;
+
+    padding:40px;
+
+    background:white;
+
+    border-radius:30px;
+
+    text-align:center;
+
+
+    box-shadow:
+    0 20px 60px #0004;
+
+
+    animation:show .5s;
+
+}
+
+
+
+h1{
+
+    color:#ff4f91;
+
+    font-size:40px;
+
+}
+
+
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    border:1px solid #ddd;
+
+    margin:20px 0;
+
+    font-size:18px;
+
+}
+
+
+
+.gender{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+
+.gender button{
+
+    flex:1;
+
+}
+
+
+
+button{
+
+    padding:15px;
+
+    border:0;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    background:#eee;
+
+}
+
+
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+.selected{
+
+    background:#ff4f91;
+
+    color:white;
+
+}
+
+
+
+.join{
+
+    width:100%;
+
+    margin-top:25px;
+
+    background:#ff4f91;
+
+    color:white;
+
+}
+
+
+
+@keyframes show{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+
+}

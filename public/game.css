@@ -1,0 +1,737 @@
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff7eb3,
+        #65c7f7
+    );
+
+}
+
+
+/* inimioare animate */
+
+body::before {
+
+    content: "❤️ ❤️ ❤️ ❤️ ❤️ ❤️";
+
+    position: absolute;
+
+    font-size: 40px;
+
+    opacity: .15;
+
+    animation: hearts 10s infinite linear;
+
+}
+
+
+
+@keyframes hearts {
+
+    from {
+
+        transform:
+        translateY(100vh);
+
+    }
+
+    to {
+
+        transform:
+        translateY(-120vh);
+
+    }
+
+}
+
+
+
+.game {
+
+    width: 700px;
+
+    padding: 40px;
+
+    background:
+
+    rgba(255,255,255,.85);
+
+
+    backdrop-filter: blur(15px);
+
+
+    border-radius: 35px;
+
+
+    box-shadow:
+
+    0 30px 80px rgba(0,0,0,.35);
+
+
+    animation: show .6s;
+
+}
+
+
+
+@keyframes show {
+
+    from {
+
+        opacity:0;
+
+        transform:
+        scale(.8);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:
+        scale(1);
+
+    }
+
+}
+
+
+
+.header {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+
+h1 {
+
+    color:#ff3f8e;
+
+}
+
+
+
+#timer {
+
+
+    width:90px;
+
+    height:90px;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    border-radius:50%;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #ff3f8e,
+        #ff8fc7
+    );
+
+
+    color:white;
+
+
+    font-size:35px;
+
+    font-weight:bold;
+
+
+    box-shadow:
+
+    0 10px 30px #ff3f8e80;
+
+
+}
+
+
+
+.progress {
+
+
+    width:100%;
+
+    height:18px;
+
+
+    background:#ddd;
+
+
+    border-radius:20px;
+
+
+    overflow:hidden;
+
+
+    margin:30px 0;
+
+
+}
+
+
+
+#bar {
+
+
+    height:100%;
+
+
+    width:0%;
+
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #ff3f8e,
+        #65c7f7
+    );
+
+
+    transition:.5s;
+
+
+}
+
+
+
+.questionBox {
+
+
+    padding:35px;
+
+
+    background:white;
+
+
+    border-radius:25px;
+
+
+    text-align:center;
+
+
+    animation:
+    question .4s;
+
+
+}
+
+
+
+@keyframes question {
+
+    from {
+
+        opacity:0;
+
+        transform:
+        translateX(50px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+
+
+.answers {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+    1fr 1fr;
+
+
+    gap:20px;
+
+
+    margin-top:30px;
+
+
+}
+
+
+
+.answer {
+
+
+    padding:20px;
+
+
+    border:none;
+
+
+    border-radius:20px;
+
+
+    cursor:pointer;
+
+
+    font-size:18px;
+
+
+    background:#f1f1f1;
+
+
+    transition:.25s;
+
+
+}
+
+
+
+.answer:hover {
+
+
+    transform:
+    translateY(-5px)
+    scale(1.03);
+
+
+    background:#ff3f8e;
+
+
+    color:white;
+
+
+}
+
+
+
+.answer:disabled {
+
+    cursor:not-allowed;
+
+}
+
+
+
+#status {
+
+
+    text-align:center;
+
+    color:#777;
+
+}
+
+/* =====================
+   TEMA BAIAT
+===================== */
+
+
+body.boy {
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff4f91,
+        #ff9ac7
+    );
+
+}
+
+
+body.boy h1 {
+
+    color:#ff2f7d;
+
+}
+
+
+body.boy #timer {
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff2f7d,
+        #ff8bbd
+    );
+
+}
+
+
+body.boy #bar {
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff2f7d,
+        #ffb0d5
+    );
+
+}
+
+
+
+
+/* =====================
+   TEMA FATA
+===================== */
+
+
+body.girl {
+
+    background:
+    linear-gradient(
+        135deg,
+        #4fa3ff,
+        #9ad8ff
+    );
+
+}
+
+
+
+body.girl h1 {
+
+    color:#2688ff;
+
+}
+
+
+
+body.girl #timer {
+
+    background:
+    linear-gradient(
+        135deg,
+        #2688ff,
+        #8ed0ff
+    );
+
+}
+
+
+
+body.girl #bar {
+
+    background:
+    linear-gradient(
+        90deg,
+        #2688ff,
+        #a7e0ff
+    );
+
+}
+
+/* =====================
+   ANSWER EFFECTS
+===================== */
+
+
+.answer.correct {
+
+    background:#42d67a !important;
+
+    color:white;
+
+    animation:
+    correct .5s;
+
+}
+
+
+
+.answer.wrong {
+
+    background:#ff4b5c !important;
+
+    color:white;
+
+    animation:
+    shake .4s;
+
+}
+
+
+
+@keyframes correct {
+
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+
+    50%{
+
+        transform:scale(1.15);
+
+    }
+
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+
+}
+
+
+
+@keyframes shake {
+
+
+    0%{
+        transform:translateX(0);
+    }
+
+
+    25%{
+        transform:translateX(-10px);
+    }
+
+
+    50%{
+        transform:translateX(10px);
+    }
+
+
+    75%{
+        transform:translateX(-10px);
+    }
+
+
+    100%{
+        transform:translateX(0);
+    }
+
+}
+
+.result {
+
+    width:700px;
+
+    padding:50px;
+
+    background:white;
+
+    border-radius:40px;
+
+    text-align:center;
+
+    box-shadow:
+    0 30px 80px #0005;
+
+    animation:
+    show .8s;
+
+}
+
+
+
+.heart {
+
+    font-size:80px;
+
+    animation:
+    heartbeat 1.2s infinite;
+
+}
+
+
+
+@keyframes heartbeat {
+
+
+0%{
+
+transform:scale(1);
+
+}
+
+
+50%{
+
+transform:scale(1.25);
+
+}
+
+
+100%{
+
+transform:scale(1);
+
+}
+
+
+}
+
+
+
+.scores {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    margin:30px 0;
+
+}
+
+
+
+.person {
+
+    padding:25px;
+
+    border-radius:25px;
+
+    width:200px;
+
+}
+
+
+
+.boyScore {
+
+    background:#ffd1e5;
+
+}
+
+
+
+.girlScore {
+
+    background:#cceaff;
+
+}
+
+
+
+.percent {
+
+    font-size:70px;
+
+    font-weight:bold;
+
+    color:#ff4f91;
+
+}
+
+.timer {
+
+    position:relative;
+
+    width:90px;
+
+    height:90px;
+
+}
+
+
+.timer svg {
+
+    width:90px;
+
+    height:90px;
+
+    transform:rotate(-90deg);
+
+}
+
+
+
+.timer circle {
+
+    fill:none;
+
+    stroke-width:8;
+
+}
+
+
+
+.timer .bg {
+
+    stroke:#ddd;
+
+}
+
+
+
+.progressCircle {
+
+    stroke:#ff3f8e;
+
+    stroke-dasharray:251;
+
+    stroke-dashoffset:0;
+
+    transition:.5s;
+
+}
+
+
+
+.timer span {
+
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+
+    transform:
+    translate(-50%,-50%);
+
+
+    color:#ff3f8e;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+}
