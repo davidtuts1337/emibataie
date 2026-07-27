@@ -192,71 +192,53 @@ data.data.text;
 
 buttons.forEach((btn,index)=>{
 
+    btn.innerText = data.data.options[index];
 
-btn.innerText=
-data.data.options[index];
+    btn.disabled = false;
 
+    btn.classList.remove("correct");
+    btn.classList.remove("wrong");
 
-btn.disabled=false;
+    btn.style.background = "";
 
+    btn.onclick=()=>{
 
-btn.style.background="#eee";
+        if(answered)
+            return;
 
+        answered=true;
 
-btn.onclick=()=>{
+        clearInterval(timer);
 
-
-if(answered)
-return;
-
-
-
-answered=true;
-
-
-
-clearInterval(timer);
+        buttons.forEach(b=>{
+            b.disabled=true;
+        });
 
 
-
-buttons.forEach(b=>{
-
-b.disabled=true;
-
-});
+        const selected = Number(btn.dataset.id);
 
 
+        if(selected === data.data.correct){
 
-const selected =
-Number(btn.dataset.id);
+            btn.classList.add("correct");
 
+        }else{
 
-if(selected === data.data.correct){
+            btn.classList.add("wrong");
 
-    btn.classList.add("correct");
-
-}else{
-
-    btn.classList.add("wrong");
-
-}
+        }
 
 
-setTimeout(()=>{
+        setTimeout(()=>{
 
+            socket.emit(
+                "answer",
+                selected
+            );
 
-    socket.emit(
-        "answer",
-        selected
-    );
+        },700);
 
-
-},700);
-
-
-};
-
-
+    };
 
 });
 
