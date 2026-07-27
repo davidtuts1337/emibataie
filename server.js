@@ -84,6 +84,11 @@ const game = {
         girl:false
     }
 
+    answerHistory:{
+        boy:[],
+        girl:[]
+    }
+
 };
 
 
@@ -672,16 +677,46 @@ function checkAnswer(type,answer){
 
 
 
-    if(answer===question.correct){
-
+    const correct = answer === question.correct;
+    
+    
+    if(correct){
+    
         if(type==="boy")
             game.boyScore++;
-
+    
         if(type==="girl")
             game.girlScore++;
-
+    
     }
+    
+    
+    // SALVARE RASPUNS
+    game.answerHistory[type].push({
+    
+        question: question.text,
+    
+        options: question.options,
+    
+        answer: answer,
+    
+        correctAnswer: question.correct,
+    
+        correct: correct,
+    
+        time: new Date().toLocaleTimeString()
+    
+    });
 
+    io.to("admin").emit(
+    "liveAnswer",
+    {
+        player: type,
+        question: question.text,
+        answer: answer,
+        correct: correct
+    }
+);
 
 
     if(type==="boy")
