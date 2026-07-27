@@ -1,5 +1,5 @@
 {
-    "boy": [
+    "girl": [
         {
             "text": "aaa",
             "options": [
@@ -11,7 +11,7 @@
             "correct": 1
         }
     ],
-    "girl": [
+    "boy": [
         {
             "text": "aaaaa",
             "options": [
@@ -19,6 +19,196 @@
                 "a",
                 "aa",
                 "a"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "trandafiri rosii sau trandafiri albi?",
+            "options": [
+                "trandafiri rosii",
+                "trandafiri albi",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "macarons sau cupcakes?",
+            "options": [
+                "macarons",
+                "cupcakes",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "capsuni sau afine?",
+            "options": [
+                "capsuni",
+                "afine",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "calatorie pe avion sau pe masina?",
+            "options": [
+                "avion",
+                "masina",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "italia sau germania?",
+            "options": [
+                "italia",
+                "germania",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "mancare dulce sau sarata?",
+            "options": [
+                "dulce",
+                "sarata",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "rap sau pop?",
+            "options": [
+                "rap",
+                "pop",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "pizza sau burrito?",
+            "options": [
+                "pizza",
+                "burrito",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "haine oversize sau fitted?",
+            "options": [
+                "oversize",
+                "fitted",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "iced coffee sau hot coffee?",
+            "options": [
+                "iced coffee",
+                "hot coffee",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "camping sau hotel?",
+            "options": [
+                "camping",
+                "hotel",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "vacanta visurilor sau masina visurilor?",
+            "options": [
+                "vacanta visurilor",
+                "masina visurilor",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "bijuterii de aur sau de argint?",
+            "options": [
+                "aur",
+                "argint",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "ce cadou prefera? flori sau ciocolata?",
+            "options": [
+                "flori",
+                "ciocolata",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "piercing sau tatuaje?",
+            "options": [
+                "piercing",
+                "tatuaje",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "soare sau luna?",
+            "options": [
+                "soare",
+                "luna",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "filme horror sau filme romantice?",
+            "options": [
+                "horror",
+                "romantice",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "ciocolata sau vanilie?",
+            "options": [
+                "ciocolata",
+                "vanilie",
+                "null",
+                "null"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "plaja sau piscina?",
+            "options": [
+                "plaja",
+                "piscina",
+                "null",
+                "null"
             ],
             "correct": 0
         }
