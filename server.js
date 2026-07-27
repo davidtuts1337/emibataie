@@ -82,7 +82,7 @@ const game = {
     waitingFinish:{
         boy:false,
         girl:false
-    }
+    },
 
     answerHistory:{
         boy:[],
