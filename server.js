@@ -62,23 +62,27 @@ const savedQuestions = loadQuestions();
 
 const game = {
 
-    
     boy: null,
     girl: null,
 
     boyQuestions: savedQuestions.boy,
     girlQuestions: savedQuestions.girl,
 
-    started: false,
+    started:false,
 
-    boyIndex: 0,
-    girlIndex: 0,
+    boyIndex:0,
+    girlIndex:0,
 
-    boyScore: 0,
-    girlScore: 0,
+    boyScore:0,
+    girlScore:0,
 
-    boyFinished: false,
-    girlFinished: false
+    boyFinished:false,
+    girlFinished:false,
+
+    waitingFinish:{
+        boy:false,
+        girl:false
+    }
 
 };
 
@@ -107,11 +111,6 @@ app.get("/admin",(req,res)=>{
     );
 });
 
-app.use((req,res)=>{
-    res.sendFile(
-        path.join(__dirname,"public","index.html")
-    );
-});
 
 // ===============================
 // SOCKET
@@ -708,52 +707,46 @@ function checkAnswer(type,answer){
 
 function finish(type){
 
-
-    if(type==="boy")
-        game.boyFinished=true;
+    game.waitingFinish[type] = true;
 
 
-    if(type==="girl")
-        game.girlFinished=true;
+    console.log(
+        type,
+        "a terminat"
+    );
 
 
-
+    // asteapta celalalt jucator
     if(
-        game.boyFinished &&
-        game.girlFinished
+        !game.waitingFinish.boy ||
+        !game.waitingFinish.girl
     ){
 
-
-        const total =
-        game.boyQuestions.length +
-        game.girlQuestions.length;
-
-
-        const score =
-        game.boyScore +
-        game.girlScore;
-
-
-
-        io.emit(
-            "result",
-            {
-
-                boy:
-                game.boyScore,
-
-                girl:
-                game.girlScore,
-
-                total:score,
-
-                max:total
-
-            }
-        );
-
+        return;
 
     }
+
+
+    const total =
+    game.boyQuestions.length +
+    game.girlQuestions.length;
+
+
+    const score =
+    game.boyScore +
+    game.girlScore;
+
+
+
+    io.emit(
+        "result",
+        {
+            boy: game.boyScore,
+            girl: game.girlScore,
+            total:score,
+            max:total
+        }
+    );
 
 }
 
