@@ -303,7 +303,82 @@ else{
 
 
 document.body.innerHTML = `
+document
+.getElementById("details")
+.onclick = ()=>{
 
+
+let html = `
+
+<h2>👦 Băiat</h2>
+
+`;
+
+
+
+data.details.boy.forEach((x,index)=>{
+
+html += `
+
+<div class="detail">
+
+<b>${index+1}. ${x.question}</b>
+
+<br>
+
+Răspuns:
+${x.answer}
+
+<br>
+
+${x.correct ? "✅ Corect" : "❌ Greșit"}
+
+</div>
+
+`;
+
+});
+
+
+
+html += `
+
+<h2>👧 Fată</h2>
+
+`;
+
+
+
+data.details.girl.forEach((x,index)=>{
+
+html += `
+
+<div class="detail">
+
+<b>${index+1}. ${x.question}</b>
+
+<br>
+
+Răspuns:
+${x.answer}
+
+<br>
+
+${x.correct ? "✅ Corect" : "❌ Greșit"}
+
+</div>
+
+`;
+
+});
+
+
+
+document.querySelector(".result")
+.innerHTML += html;
+
+
+};
 
 <div class="result">
 
@@ -374,7 +449,9 @@ ${data.total}/${data.max} răspunsuri corecte
 
 </p>
 
-
+<button id="details">
+    🔍 View more details
+</button>
 
 </div>
 
