@@ -388,16 +388,24 @@ io.on("connection",(socket)=>{
 
 
 
-        io.to(game.boy.id)
-        .emit(
+        io.to(game.boy.id).emit(
             "startQuestions"
         );
-
-
-
-        io.to(game.girl.id)
-        .emit(
+        
+        io.to(game.girl.id).emit(
             "startQuestions"
+        );
+        
+        
+        sendQuestion(
+            game.boy.id,
+            "boy"
+        );
+        
+        
+        sendQuestion(
+            game.girl.id,
+            "girl"
         );
 
 
@@ -599,12 +607,6 @@ function sendQuestion(id,type){
 
     let list;
 
-    console.log(
-        "Trimit intrebare:",
-        type,
-        list
-    );
-
     if(type==="boy"){
 
         index=game.boyIndex;
@@ -621,6 +623,11 @@ function sendQuestion(id,type){
     }
 
 
+    console.log(
+        "Trimit intrebare:",
+        type,
+        list
+    );
 
     if(index>=list.length){
 
