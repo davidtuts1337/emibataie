@@ -1,5 +1,6 @@
 const socket = io();
 
+
 function login(){
 
     const password =
@@ -26,6 +27,24 @@ socket.on("adminAccess",()=>{
 
 });
 
+
+
+// ===============================
+// LIVE ANSWERS
+// ===============================
+
+socket.on("liveAnswer",(data)=>{
+
+    console.log("LIVE ANSWER:", data);
+
+});
+
+
+
+// ===============================
+// START GAME
+// ===============================
+
 document
 .getElementById("start")
 .onclick=()=>{
@@ -35,6 +54,10 @@ document
 };
 
 
+
+// ===============================
+// RESET GAME
+// ===============================
 
 document
 .getElementById("reset")
@@ -46,6 +69,10 @@ document
 
 
 
+
+// ===============================
+// ADD QUESTION
+// ===============================
 
 function addQuestion(type){
 
@@ -128,6 +155,12 @@ data
 
 
 
+
+
+// ===============================
+// RECEIVE QUESTIONS
+// ===============================
+
 socket.on(
 "questions",
 (data)=>{
@@ -153,6 +186,10 @@ data.girl
 
 
 
+
+// ===============================
+// RENDER QUESTIONS
+// ===============================
 
 function render(id,list){
 
@@ -197,6 +234,11 @@ document.getElementById(id).innerHTML = html;
 
 
 
+
+
+// ===============================
+// DELETE QUESTION
+// ===============================
 
 function removeQuestion(type,index){
 
