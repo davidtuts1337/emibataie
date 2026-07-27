@@ -13,17 +13,17 @@
         {
             "text": "bmw sau mercedes?",
             "options": ["bmw", "mercedes", "null", "null"],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "jocuri pe consola sau pe laptop?",
             "options": ["consola", "laptop", "null", "null"],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "bijuterii de aur sau de argint?",
             "options": ["aur", "argint", "null", "null"],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "pepene verde sau galben?",
@@ -38,17 +38,17 @@
         {
             "text": "insta sau tiktok?",
             "options": ["insta", "tiktok", "null", "null"],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "mancare dulce sau sarata?",
             "options": ["dulce", "sarata", "null", "null"],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "iarna sau vara?",
             "options": ["iarna", "vara", "null", "null"],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "piscina sau mare?",
@@ -58,7 +58,7 @@
         {
             "text": "paste sau pizza?",
             "options": ["paste", "pizza", "null", "null"],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "avion sau masina?",
@@ -68,7 +68,7 @@
         {
             "text": "crampoane noi sau manusi noi?",
             "options": ["crampoane noi", "manusi noi", "null", "null"],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "gratar sau fast-food?",
@@ -78,7 +78,7 @@
         {
             "text": "jocuri competitive sau jocuri cozy (gen minecraft)?",
             "options": ["jocuri competitive", "jocuri cozy", "null", "null"],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "doritos sau takis?",
@@ -148,10 +148,10 @@
             "correct": 0
         },
         {
-            "text": "mancare dulce sau sarata?",
+            "text": "mancare picanta sau acra?",
             "options": [
-                "dulce",
-                "sarata",
+                "picanta",
+                "acra",
                 "null",
                 "null"
             ],
