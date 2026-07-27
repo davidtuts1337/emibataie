@@ -370,7 +370,7 @@ h1 {
 ===================== */
 
 
-body.boy {
+body.girl {
 
     background:
     linear-gradient(
@@ -382,14 +382,14 @@ body.boy {
 }
 
 
-body.boy h1 {
+body.girl h1 {
 
     color:#ff2f7d;
 
 }
 
 
-body.boy #timer {
+body.girl #timer {
 
     background:
     linear-gradient(
@@ -401,7 +401,7 @@ body.boy #timer {
 }
 
 
-body.boy #bar {
+body.girl #bar {
 
     background:
     linear-gradient(
@@ -420,7 +420,7 @@ body.boy #bar {
 ===================== */
 
 
-body.girl {
+body.boy {
 
     background:
     linear-gradient(
@@ -433,7 +433,7 @@ body.girl {
 
 
 
-body.girl h1 {
+body.boy h1 {
 
     color:#2688ff;
 
@@ -441,7 +441,7 @@ body.girl h1 {
 
 
 
-body.girl #timer {
+body.boy #timer {
 
     background:
     linear-gradient(
@@ -454,7 +454,7 @@ body.girl #timer {
 
 
 
-body.girl #bar {
+body.boy #bar {
 
     background:
     linear-gradient(
