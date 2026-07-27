@@ -1,27 +1,102 @@
 {
-    "girl": [
+    "girl":[
         {
-            "text": "aaa",
-            "options": [
-                "a",
-                "aa",
-                "aaa",
-                "aa"
-            ],
-            "correct": 1
-        }
-    ],
-    "boy": [
-        {
-            "text": "aaaaa",
-            "options": [
-                "aaa",
-                "a",
-                "aa",
-                "a"
-            ],
+            "text": "carne de vita sau carne de porc?",
+            "options": ["carne de vita", "carne de porc", "null", "null"],
             "correct": 0
         },
+        {
+            "text": "energizante sau cafea?",
+            "options": ["energizante", "cafea", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "bmw sau mercedes?",
+            "options": ["bmw", "mercedes", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "jocuri pe consola sau pe laptop?",
+            "options": ["consola", "laptop", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "bijuterii de aur sau de argint?",
+            "options": ["aur", "argint", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "pepene verde sau galben?",
+            "options": ["pepene verde", "pepene galben", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "caini sau pisici?",
+            "options": ["caini", "pisici", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "insta sau tiktok?",
+            "options": ["insta", "tiktok", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "mancare dulce sau sarata?",
+            "options": ["dulce", "sarata", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "iarna sau vara?",
+            "options": ["iarna", "vara", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "piscina sau mare?",
+            "options": ["piscina", "mare", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "paste sau pizza?",
+            "options": ["paste", "pizza", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "avion sau masina?",
+            "options": ["avion", "masina", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "crampoane noi sau manusi noi?",
+            "options": ["crampoane noi", "manusi noi", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "gratar sau fast-food?",
+            "options": ["gratar", "fast-food", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "jocuri competitive sau jocuri cozy (gen minecraft)?",
+            "options": ["jocuri competitive", "jocuri cozy", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "doritos sau takis?",
+            "options": ["doritos", "takis", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "apus sau rasarit?",
+            "options": ["apus", "rasarit", "null", "null"],
+            "correct": 0
+        },
+        {
+            "text": "fotbal cu prietenii sau gaming cu prietenii?",
+            "options": ["fotbal cu prietenii", "gaming cu prietenii", "null", "null"],
+            "correct": 0
+        }
+    ]
+    "boy": [
         {
             "text": "trandafiri rosii sau trandafiri albi?",
             "options": [
@@ -50,28 +125,28 @@
                 "null",
                 "null"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
-            "text": "calatorie pe avion sau pe masina?",
+            "text": "nike sau adidas (la haine)?",
             "options": [
-                "avion",
-                "masina",
+                "nike",
+                "adidas",
                 "null",
                 "null"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
-            "text": "italia sau germania?",
+            "text": "blugi sau pantaloni de sport?",
             "options": [
-                "italia",
-                "germania",
+                "blugi",
+                "pantaloni de sport",
                 "null",
                 "null"
             ],
-            "correct": 0
-        },
+            "correct": 1
+        }
         {
             "text": "mancare dulce sau sarata?",
             "options": [
@@ -80,7 +155,7 @@
                 "null",
                 "null"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "rap sau pop?",
@@ -93,24 +168,24 @@
             "correct": 0
         },
         {
-            "text": "pizza sau burrito?",
+            "text": "pizza sau shaorma?",
             "options": [
                 "pizza",
-                "burrito",
+                "shaorma",
                 "null",
                 "null"
             ],
             "correct": 0
         },
         {
-            "text": "haine oversize sau fitted?",
+            "text": "mc sau kfc?",
             "options": [
-                "oversize",
-                "fitted",
+                "mc",
+                "kfc",
                 "null",
                 "null"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "iced coffee sau hot coffee?",
@@ -130,7 +205,7 @@
                 "null",
                 "null"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "vacanta visurilor sau masina visurilor?",
@@ -140,7 +215,7 @@
                 "null",
                 "null"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "bijuterii de aur sau de argint?",
@@ -150,7 +225,7 @@
                 "null",
                 "null"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
             "text": "ce cadou prefera? flori sau ciocolata?",
@@ -180,37 +255,37 @@
                 "null",
                 "null"
             ],
-            "correct": 0
+            "correct": 1
         },
         {
-            "text": "filme horror sau filme romantice?",
+            "text": "filme horror sau filme de actiune?",
             "options": [
-                "horror",
-                "romantice",
+                "filme horror",
+                "filme de actiune",
                 "null",
                 "null"
             ],
             "correct": 0
         },
         {
-            "text": "ciocolata sau vanilie?",
+            "text": "redbull sau hell?",
             "options": [
-                "ciocolata",
-                "vanilie",
+                "redbull",
+                "hell",
                 "null",
                 "null"
             ],
             "correct": 0
         },
         {
-            "text": "plaja sau piscina?",
+            "text": "mercedes sau bmw?",
             "options": [
-                "plaja",
-                "piscina",
+                "mercedes",
+                "bmw",
                 "null",
                 "null"
             ],
-            "correct": 0
-        }
+            "correct": 1
+        },
     ]
 }
