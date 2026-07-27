@@ -303,82 +303,7 @@ else{
 
 
 document.body.innerHTML = `
-document
-.getElementById("details")
-.onclick = ()=>{
 
-
-let html = `
-
-<h2>👦 Băiat</h2>
-
-`;
-
-
-
-data.details.boy.forEach((x,index)=>{
-
-html += `
-
-<div class="detail">
-
-<b>${index+1}. ${x.question}</b>
-
-<br>
-
-Răspuns:
-${x.answer}
-
-<br>
-
-${x.correct ? "✅ Corect" : "❌ Greșit"}
-
-</div>
-
-`;
-
-});
-
-
-
-html += `
-
-<h2>👧 Fată</h2>
-
-`;
-
-
-
-data.details.girl.forEach((x,index)=>{
-
-html += `
-
-<div class="detail">
-
-<b>${index+1}. ${x.question}</b>
-
-<br>
-
-Răspuns:
-${x.answer}
-
-<br>
-
-${x.correct ? "✅ Corect" : "❌ Greșit"}
-
-</div>
-
-`;
-
-});
-
-
-
-document.querySelector(".result")
-.innerHTML += html;
-
-
-};
 
 <div class="result">
 
@@ -430,10 +355,9 @@ ${data.girl}
 
 
 <h2>
-
 🏆 Scor final
-
 </h2>
+
 
 
 <div class="percent">
@@ -443,15 +367,23 @@ ${percent}%
 </div>
 
 
+
 <p>
 
 ${data.total}/${data.max} răspunsuri corecte
 
 </p>
 
+
+
 <button id="details">
-    🔍 View more details
+🔍 View more details
 </button>
+
+
+
+<div id="detailsBox"></div>
+
 
 </div>
 
@@ -460,6 +392,94 @@ ${data.total}/${data.max} răspunsuri corecte
 
 
 
-}
 
-);
+// BUTON DETAILS
+
+document
+.getElementById("details")
+.onclick = ()=>{
+
+
+let html = `
+
+<h2>👦 Băiat</h2>
+
+`;
+
+
+
+data.details.boy.forEach((x,index)=>{
+
+
+html += `
+
+<div class="detail">
+
+<b>
+${index+1}. ${x.question}
+</b>
+
+<br>
+
+Răspuns:
+${x.options[x.answer] || "Fără răspuns"}
+
+<br>
+
+${x.correct ? "✅ Corect" : "❌ Greșit"}
+
+</div>
+
+`;
+
+});
+
+
+
+
+html += `
+
+<h2>👧 Fată</h2>
+
+`;
+
+
+
+data.details.girl.forEach((x,index)=>{
+
+
+html += `
+
+<div class="detail">
+
+<b>
+${index+1}. ${x.question}
+</b>
+
+<br>
+
+Răspuns:
+${x.options[x.answer] || "Fără răspuns"}
+
+<br>
+
+${x.correct ? "✅ Corect" : "❌ Greșit"}
+
+</div>
+
+`;
+
+});
+
+
+
+document
+.getElementById("detailsBox")
+.innerHTML = html;
+
+
+};
+
+
+
+});
