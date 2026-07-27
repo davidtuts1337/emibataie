@@ -660,24 +660,18 @@ function checkAnswer(type, answer){
 
 
     let question;
-    let index;
 
 
     if(type === "boy"){
 
-        index = game.boyIndex;
-
-        question = game.boyQuestions[index];
+        question = game.boyQuestions[game.boyIndex];
 
     }
 
 
-
     if(type === "girl"){
 
-        index = game.girlIndex;
-
-        question = game.girlQuestions[index];
+        question = game.girlQuestions[game.girlIndex];
 
     }
 
@@ -718,10 +712,9 @@ function checkAnswer(type, answer){
 
 
 
-    // SALVEAZA RASPUNSUL PENTRU DETALII
+    // salveaza istoricul
 
     if(type === "boy"){
-
 
         game.answerHistory.boy.push({
 
@@ -735,13 +728,11 @@ function checkAnswer(type, answer){
 
         });
 
-
     }
 
 
 
     if(type === "girl"){
-
 
         game.answerHistory.girl.push({
 
@@ -755,13 +746,13 @@ function checkAnswer(type, answer){
 
         });
 
-
     }
 
 
 
 
-    // TRECE LA URMATOAREA INTREBARE
+
+    // urmatoarea intrebare
 
     if(type === "boy"){
 
@@ -779,6 +770,7 @@ function checkAnswer(type, answer){
         }
 
 
+
         sendQuestion(
             game.boy.id,
             "boy"
@@ -786,7 +778,6 @@ function checkAnswer(type, answer){
 
 
     }
-
 
 
 
@@ -821,15 +812,7 @@ function checkAnswer(type, answer){
 }
 
 
-
 function finish(type){
-
-
-    console.log(
-        "PLAYER FINISHED:",
-        type
-    );
-
 
 
     if(type === "boy"){
@@ -837,7 +820,6 @@ function finish(type){
         game.waitingFinish.boy = true;
 
     }
-
 
 
     if(type === "girl"){
@@ -848,15 +830,6 @@ function finish(type){
 
 
 
-    console.log(
-        "WAITING STATUS:",
-        game.waitingFinish
-    );
-
-
-
-    // DACA DOAR UNUL A TERMINAT
-    // ASTEPTAM CELALALT
 
     if(
         !game.waitingFinish.boy ||
@@ -871,56 +844,31 @@ function finish(type){
 
 
 
-    // AMANDOI AU TERMINAT
-
-
-    const total =
-    game.boyQuestions.length +
-    game.girlQuestions.length;
-
-
-
-    const score =
-    game.boyScore +
-    game.girlScore;
-
-
-
-
     io.emit(
         "result",
         {
 
-            boy:
-            game.boyScore,
+            boy: game.boyScore,
 
-
-            girl:
-            game.girlScore,
-
+            girl: game.girlScore,
 
             total:
-            score,
-
+            game.boyScore + game.girlScore,
 
             max:
-            total,
+            game.boyQuestions.length + game.girlQuestions.length,
 
 
             details:{
 
-                boy:
-                game.answerHistory.boy,
+                boy: game.answerHistory.boy,
 
-
-                girl:
-                game.answerHistory.girl
+                girl: game.answerHistory.girl
 
             }
 
         }
     );
-
 
 
 }
