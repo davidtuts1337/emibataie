@@ -774,15 +774,22 @@ function finish(type){
 
 
 
-    io.emit(
-        "result",
-        {
-            boy: game.boyScore,
-            girl: game.girlScore,
-            total:score,
-            max:total
+    io.emit("result",{
+    
+        boy: game.boyScore,
+    
+        girl: game.girlScore,
+    
+        total:score,
+    
+        max:total,
+    
+        details:{
+            boy:game.answerHistory.boy,
+            girl:game.answerHistory.girl
         }
-    );
+    
+    });
 
 }
 
