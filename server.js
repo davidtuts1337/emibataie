@@ -656,90 +656,166 @@ function sendQuestion(id,type){
 
 
 
-function checkAnswer(type,answer){
+function checkAnswer(type, answer){
 
 
     let question;
+    let index;
 
 
-    if(type==="boy"){
+    if(type === "boy"){
 
-        question=
-        game.boyQuestions[
-            game.boyIndex
-        ];
+        index = game.boyIndex;
 
-    }
-
-
-    if(type==="girl"){
-
-        question=
-        game.girlQuestions[
-            game.girlIndex
-        ];
+        question = game.boyQuestions[index];
 
     }
 
 
 
-    const correct = answer === question.correct;
-    
-    
-    if(correct){
-    
-        if(type==="boy")
+    if(type === "girl"){
+
+        index = game.girlIndex;
+
+        question = game.girlQuestions[index];
+
+    }
+
+
+
+    if(!question){
+
+        return;
+
+    }
+
+
+
+    let correct = false;
+
+
+
+    if(answer === question.correct){
+
+        correct = true;
+
+
+        if(type === "boy"){
+
             game.boyScore++;
-    
-        if(type==="girl")
+
+        }
+
+
+        if(type === "girl"){
+
             game.girlScore++;
-    
+
+        }
+
     }
-    
-    
-    // SALVARE RASPUNS
-    game.answerHistory[type].push({
-    
-        question: question.text,
-    
-        options: question.options,
-    
-        answer: answer,
-    
-        correctAnswer: question.correct,
-    
-        correct: correct,
-    
-        time: new Date().toLocaleTimeString()
-    
-    });
 
-    io.to("admin").emit(
-    "liveAnswer",
-    {
-        player: type,
-        question: question.text,
-        answer: answer,
-        correct: correct
+
+
+
+    // SALVEAZA RASPUNSUL PENTRU DETALII
+
+    if(type === "boy"){
+
+
+        game.answerHistory.boy.push({
+
+            question: question.text,
+
+            options: question.options,
+
+            answer: answer,
+
+            correct: correct
+
+        });
+
+
     }
-);
 
 
-    if(type==="boy")
+
+    if(type === "girl"){
+
+
+        game.answerHistory.girl.push({
+
+            question: question.text,
+
+            options: question.options,
+
+            answer: answer,
+
+            correct: correct
+
+        });
+
+
+    }
+
+
+
+
+    // TRECE LA URMATOAREA INTREBARE
+
+    if(type === "boy"){
+
+
         game.boyIndex++;
 
 
-    if(type==="girl")
+        if(game.boyIndex >= game.boyQuestions.length){
+
+
+            finish("boy");
+
+            return;
+
+        }
+
+
+        sendQuestion(
+            game.boy.id,
+            "boy"
+        );
+
+
+    }
+
+
+
+
+
+    if(type === "girl"){
+
+
         game.girlIndex++;
 
 
-
-    if(type==="boy")
-        sendQuestion(game.boy.id,"boy");
+        if(game.girlIndex >= game.girlQuestions.length){
 
 
-    if(type==="girl")
-        sendQuestion(game.girl.id,"girl");
+            finish("girl");
+
+            return;
+
+        }
+
+
+
+        sendQuestion(
+            game.girl.id,
+            "girl"
+        );
+
+
+    }
+
 
 
 }
@@ -748,16 +824,40 @@ function checkAnswer(type,answer){
 
 function finish(type){
 
-    game.waitingFinish[type] = true;
-
 
     console.log(
-        type,
-        "a terminat"
+        "PLAYER FINISHED:",
+        type
     );
 
 
-    // asteapta celalalt jucator
+
+    if(type === "boy"){
+
+        game.waitingFinish.boy = true;
+
+    }
+
+
+
+    if(type === "girl"){
+
+        game.waitingFinish.girl = true;
+
+    }
+
+
+
+    console.log(
+        "WAITING STATUS:",
+        game.waitingFinish
+    );
+
+
+
+    // DACA DOAR UNUL A TERMINAT
+    // ASTEPTAM CELALALT
+
     if(
         !game.waitingFinish.boy ||
         !game.waitingFinish.girl
@@ -768,9 +868,16 @@ function finish(type){
     }
 
 
+
+
+
+    // AMANDOI AU TERMINAT
+
+
     const total =
     game.boyQuestions.length +
     game.girlQuestions.length;
+
 
 
     const score =
@@ -779,25 +886,44 @@ function finish(type){
 
 
 
-    io.emit("result",{
-    
-        boy: game.boyScore,
-    
-        girl: game.girlScore,
-    
-        total:score,
-    
-        max:total,
-    
-        details:{
-            boy:game.answerHistory.boy,
-            girl:game.answerHistory.girl
+
+    io.emit(
+        "result",
+        {
+
+            boy:
+            game.boyScore,
+
+
+            girl:
+            game.girlScore,
+
+
+            total:
+            score,
+
+
+            max:
+            total,
+
+
+            details:{
+
+                boy:
+                game.answerHistory.boy,
+
+
+                girl:
+                game.answerHistory.girl
+
+            }
+
         }
-    
-    });
+    );
+
+
 
 }
-
 
 // ===============================
 // START
