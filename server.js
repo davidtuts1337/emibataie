@@ -234,6 +234,7 @@ io.on("connection",(socket)=>{
 
 
         if(password==="admin"){
+            socket.join("admin");
 
             socket.emit(
                 "adminAccess"
