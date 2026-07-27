@@ -366,49 +366,47 @@ io.on("connection",(socket)=>{
 
 
     socket.on("startGame",()=>{
-
-
+    
+    
         if(!game.boy || !game.girl){
-
-
+    
             socket.emit(
                 "errorMessage",
                 "Nu sunt conectați ambii jucători"
             );
-
-
+    
             return;
-
-
         }
-
-
-
+    
+    
         game.started=true;
-
-
-
-        io.to(game.boy.id).emit(
-            "startQuestions"
-        );
-        
-        io.to(game.girl.id).emit(
-            "startQuestions"
-        );
-        
-        
-        sendQuestion(
-            game.boy.id,
-            "boy"
-        );
-        
-        
-        sendQuestion(
-            game.girl.id,
-            "girl"
-        );
-
-
+    
+    
+        io.to(game.boy.id)
+        .emit("startQuestions");
+    
+    
+        io.to(game.girl.id)
+        .emit("startQuestions");
+    
+    
+    
+        setTimeout(()=>{
+    
+            sendQuestion(
+                game.boy.id,
+                "boy"
+            );
+    
+    
+            sendQuestion(
+                game.girl.id,
+                "girl"
+            );
+    
+        },1000);
+    
+    
     });
 
 
